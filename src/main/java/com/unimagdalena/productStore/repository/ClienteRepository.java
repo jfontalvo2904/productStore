@@ -7,7 +7,7 @@ import com.unimagdalena.productStore.entity.Cliente;
 
 public interface ClienteRepository extends JpaRepository<Cliente, Long> {
 
-    @Query("S")
+    @Query("SELECT c FROM Cliente c WHERE c.email = ?1")
     Cliente buscarClientePorEmail(String email);
     
 }
