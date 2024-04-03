@@ -28,7 +28,6 @@ public class Cliente {
     private String direccion;
 
 
-    @OneToMany(mappedBy="cliente", cascade=CascadeType.ALL,
-            fetch=FetchType.EAGER, orphanRemoval=true)
+    @OneToMany(mappedBy="cliente")
     List<Pedido> pedidos;
 }
