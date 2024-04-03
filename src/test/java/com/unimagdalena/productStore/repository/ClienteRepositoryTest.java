@@ -7,6 +7,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import java.util.List;
 import java.util.Optional;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -93,6 +94,21 @@ class ClienteRepositoryTest extends AbstractIntegrationDBTest {
     void buscarClientePorEmailQueNoExiste() {
         Cliente clienteBuscado = this.clienteRepository.buscarClientePorEmail("prueba@correo.com");
         assertThat(clienteBuscado).isNull();
+    }
+
+    @Test
+    void buscarClientesPorDireccion(){
+
+        Cliente cliente = Cliente.builder()
+                            .nombre("Victor")
+                            .email("victor@correo.com")
+                            .direccion("calle 10B")
+                            .build();
+        this.clienteRepository.save(cliente);
+
+        List<Cliente> clientes = this.clienteRepository.buscarClientesPorDireccion("calle 10B");
+
+        assertThat(clientes).isNotEmpty().hasSize(2);
     }
 
 
