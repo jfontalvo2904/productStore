@@ -15,4 +15,7 @@ public interface ClienteRepository extends JpaRepository<Cliente, Long> {
     @Query("SELECT c FROM Cliente c WHERE c.direccion = ?1")
     List<Cliente> buscarClientesPorDireccion(String direccion);
 
+    @Query("SELECT c FROM Cliente c WHERE c.nombre LIKE CONCAT(?1, '%')")
+    List<Cliente> buscarClientesPorNombre(String nombre);
+
 }

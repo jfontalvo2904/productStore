@@ -34,17 +34,20 @@ class ClienteRepositoryTest extends AbstractIntegrationDBTest {
         this.clienteRepository.flush();
     }
 
-    Cliente crearCliente() {
-        return  Cliente.builder()
-                .nombre("José")
-                .email("fontalvo0218@gmail.com")
-                .direccion("calle 10B")
-                .build();
+    Cliente crearDefaultCliente() {
+        return this.crearCliente("José", "fontalvo0218@gmail.com", "calle 10B");
+    }
 
+    Cliente crearCliente( String nombre, String email, String direccion) {
+        return  Cliente.builder()
+                .nombre(nombre)
+                .email(email)
+                .direccion(direccion)
+                .build();
     }
 
     Cliente crearYguardarClienteEnBd(){
-        Cliente cliente = this.crearCliente();
+        Cliente cliente = this.crearDefaultCliente();
         return this.clienteRepository.save(cliente);
     }
 
@@ -98,17 +101,26 @@ class ClienteRepositoryTest extends AbstractIntegrationDBTest {
 
     @Test
     void buscarClientesPorDireccion(){
+        Cliente cliente = this.crearCliente("Victor", "victor@correo.com", "calle 10B");
 
-        Cliente cliente = Cliente.builder()
-                            .nombre("Victor")
-                            .email("victor@correo.com")
-                            .direccion("calle 10B")
-                            .build();
         this.clienteRepository.save(cliente);
 
         List<Cliente> clientes = this.clienteRepository.buscarClientesPorDireccion("calle 10B");
 
         assertThat(clientes).isNotEmpty().hasSize(2);
+    }
+
+    @Test
+    void buscarClientesPorNombre(){
+        Cliente cliente1 = this.crearCliente("Victor", "victor@correo.com", "calle 10B");
+        Cliente cliente2 = this.crearCliente("José Alberto", "jose@correo.com", "calle 10B");
+        this.clienteRepository.save(cliente1);
+        this.clienteRepository.save(cliente2);
+
+        List<Cliente> clientes = this.clienteRepository.buscarClientesPorNombre("José");
+        List<Cliente> clientes2 = this.clienteRepository.buscarClientesPorNombre("Victor");
+
+        assertThat(clientes2).isNotEmpty().hasSize(1);
     }
 
 
