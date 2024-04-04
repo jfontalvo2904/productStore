@@ -4,11 +4,18 @@ import java.util.List;
 
 import com.unimagdalena.productStore.dto.ProductoDto;
 import com.unimagdalena.productStore.dto.ProductoTSDto;
+import com.unimagdalena.productStore.entity.Producto;
 import com.unimagdalena.productStore.exceptions.ProductoNotFoundException;
 
 public interface ProductoServices {
 
     List<ProductoDto> getAll();
+
+    List<ProductoDto> getAllByNombre(String nombre);
+
+    List<ProductoDto> getAllInStock();
+
+    List<ProductoDto> getAllByStock(Integer stock);
 
     ProductoDto guardar(ProductoTSDto data);
 

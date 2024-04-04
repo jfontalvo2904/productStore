@@ -34,7 +34,25 @@ public class ProductoServicesImpl implements ProductoServices {
     @Override
     public List<ProductoDto> getAll() {
         List<Producto> data = this.productoRepository.findAll();
-        return data.stream().map(e -> this.productoMapper.ProductoToDto(e)).collect(null);
+        return this.productoMapper.ProductosToDtos(data);
+    }
+
+    @Override
+    public List<ProductoDto> getAllByNombre(String nombre) {
+        List<Producto> data = this.productoRepository.findByNombre(nombre);
+        return this.productoMapper.ProductosToDtos(data);
+    }
+
+    @Override
+    public List<ProductoDto> getAllInStock() {
+        List<Producto> data = this.productoRepository.buscarProductosEnStock();
+        return this.productoMapper.ProductosToDtos(data);
+    }
+
+    @Override
+    public List<ProductoDto> getAllByStock(Integer stock) {
+        List<Producto> data = this.productoRepository.buscarProductosPorStock(stock);
+        return this.productoMapper.ProductosToDtos(data);
     }
 
     @Override

@@ -23,6 +23,6 @@ public class Producto {
     private Float price;
     private Integer stock;
 
-    @OneToMany(mappedBy="producto", orphanRemoval=true)
+    @OneToMany(mappedBy = "producto")
     List<ItemPedido> itemsPedido;
 }
