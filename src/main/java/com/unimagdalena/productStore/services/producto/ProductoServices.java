@@ -11,12 +11,6 @@ public interface ProductoServices {
 
     List<ProductoDto> getAll();
 
-    List<ProductoDto> getAllByNombre(String nombre);
-
-    List<ProductoDto> getAllInStock();
-
-    List<ProductoDto> getAllByStock(Integer stock);
-
     ProductoDto guardar(ProductoToSaveDto data);
 
     ProductoDto actualizar(Long id, ProductoDto data);
