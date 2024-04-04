@@ -1,9 +1,9 @@
-package com.unimagdalena.productStore.services;
+package com.unimagdalena.productStore.services.producto;
 
 import java.util.List;
 
-import com.unimagdalena.productStore.dto.ProductoDto;
-import com.unimagdalena.productStore.dto.ProductoTSDto;
+import com.unimagdalena.productStore.dto.producto.ProductoDto;
+import com.unimagdalena.productStore.dto.producto.ProductoToSaveDto;
 import com.unimagdalena.productStore.entity.Producto;
 import com.unimagdalena.productStore.exceptions.ProductoNotFoundException;
 
@@ -17,7 +17,7 @@ public interface ProductoServices {
 
     List<ProductoDto> getAllByStock(Integer stock);
 
-    ProductoDto guardar(ProductoTSDto data);
+    ProductoDto guardar(ProductoToSaveDto data);
 
     ProductoDto actualizar(Long id, ProductoDto data);
 

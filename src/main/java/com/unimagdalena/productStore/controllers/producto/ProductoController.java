@@ -1,4 +1,4 @@
-package com.unimagdalena.productStore.controllers;
+package com.unimagdalena.productStore.controllers.producto;
 
 import java.util.List;
 
@@ -14,10 +14,10 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.unimagdalena.productStore.dto.ProductoDto;
-import com.unimagdalena.productStore.dto.ProductoTSDto;
+import com.unimagdalena.productStore.dto.producto.ProductoDto;
+import com.unimagdalena.productStore.dto.producto.ProductoToSaveDto;
 import com.unimagdalena.productStore.entity.Producto;
-import com.unimagdalena.productStore.services.ProductoServices;
+import com.unimagdalena.productStore.services.producto.ProductoServices;
 
 @RestController
 @RequestMapping("/productos")
@@ -47,7 +47,7 @@ public class ProductoController {
     }
 
     @PostMapping(consumes = "application/*")
-    public ResponseEntity<ProductoDto> guardar(@RequestBody ProductoTSDto data) {
+    public ResponseEntity<ProductoDto> guardar(@RequestBody ProductoToSaveDto data) {
         return new ResponseEntity<>(this.entityService.guardar(data), HttpStatus.CREATED);
     }
 

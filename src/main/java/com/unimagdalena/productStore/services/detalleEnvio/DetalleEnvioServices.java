@@ -1,8 +1,8 @@
-package com.unimagdalena.productStore.services;
+package com.unimagdalena.productStore.services.detalleEnvio;
 
 import java.util.List;
 
-import com.unimagdalena.productStore.dto.DetalleEnvioDto;
+import com.unimagdalena.productStore.dto.detalleEnvio.DetalleEnvioDto;
 import com.unimagdalena.productStore.exceptions.DetalleEnvioNotFoundException;
 
 public interface DetalleEnvioServices {

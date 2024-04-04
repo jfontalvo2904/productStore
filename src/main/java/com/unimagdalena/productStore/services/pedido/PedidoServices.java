@@ -1,16 +1,16 @@
-package com.unimagdalena.productStore.services;
+package com.unimagdalena.productStore.services.pedido;
 
 import java.util.List;
 
-import com.unimagdalena.productStore.dto.PedidoDto;
-import com.unimagdalena.productStore.dto.PedidoTSDto;
+import com.unimagdalena.productStore.dto.pedido.PedidoDto;
+import com.unimagdalena.productStore.dto.pedido.PedidoToSaveDto;
 import com.unimagdalena.productStore.exceptions.PedidoNotFoundException;
 
 public interface PedidoServices {
 
     List<PedidoDto> getAll();
 
-    PedidoDto guardar(PedidoTSDto data);
+    PedidoDto guardar(PedidoToSaveDto data);
 
     PedidoDto actualizar(Long id, PedidoDto data);
 
