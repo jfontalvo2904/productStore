@@ -1,6 +1,6 @@
 package com.unimagdalena.productStore.dto;
 
-public record DetalleEnvioTSDto(Long id,
+public record DetalleEnvioTSDto(
         Long pedido,
         String direccion,
         String transportadora,
