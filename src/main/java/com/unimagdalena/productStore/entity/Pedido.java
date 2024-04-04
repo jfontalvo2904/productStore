@@ -29,12 +29,12 @@ public class Pedido {
     @Enumerated(EnumType.STRING)
     private PedidoStatus status;
 
-    @OneToOne(mappedBy = "pedido", cascade = CascadeType.ALL)
+    @OneToOne(mappedBy = "pedido")
     private DetalleEnvio detalleEnvio;
 
-    @OneToOne(mappedBy = "pedido", cascade = CascadeType.ALL)
+    @OneToOne(mappedBy = "pedido")
     private Pago pago;
 
-    @OneToMany(mappedBy="pedido", orphanRemoval=true)
+    @OneToMany(mappedBy="pedido")
     List<ItemPedido> itemsPedido;
 }

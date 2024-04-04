@@ -25,6 +25,7 @@ public class Pago {
     @JoinColumn(name = "pedido_id")
     private Pedido pedido;
 
+    @Column(nullable = false)
     private double totalPago;
 
     @Temporal(TemporalType.TIMESTAMP)
