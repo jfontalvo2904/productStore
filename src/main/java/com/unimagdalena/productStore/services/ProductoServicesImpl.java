@@ -7,35 +7,51 @@ import org.springframework.stereotype.Service;
 
 import com.unimagdalena.productStore.dto.ClienteDto;
 import com.unimagdalena.productStore.dto.ProductoDto;
+import com.unimagdalena.productStore.dto.ProductoMapper;
+import com.unimagdalena.productStore.dto.ProductoMapperImpl;
 import com.unimagdalena.productStore.dto.ProductoTSDto;
 import com.unimagdalena.productStore.entity.Cliente;
 import com.unimagdalena.productStore.entity.Producto;
+import com.unimagdalena.productStore.exceptions.ProductoNotFoundException;
 import com.unimagdalena.productStore.repository.ClienteRepository;
 import com.unimagdalena.productStore.repository.ProductoRepository;
 
 @Service
-public class ProductoServicesImpl {
-
+public class ProductoServicesImpl implements ProductoServices {
     @Autowired
     private ProductoRepository productoRepository;
-    private final ProductoMapperImpl productoMapper;
-
-    public ProductoServiceImpl(ProductoRepository productoRepository, ProductoMapperImpl productoMapper) {
-        this.productoRepository = productoRepository;
-        this.productoMapper = productoMapper;
-    }
+    @Autowired
+    private ProductoMapperImpl productoMapper;
 
     @Override
     public ProductoDto guardar(ProductoTSDto data) {
 
-        Producto producto = this.productoMapper.productoToSDtoToMensaje(data);
+        Producto producto = this.productoMapper.TsDtoToProducto(data);
         Producto productoSaved = this.productoRepository.save(producto);
-        return this.productoMapper.mensajeToMensajeDto(productoSaved);
+        return this.productoMapper.ProductoToDto(productoSaved);
     }
 
     @Override
     public List<ProductoDto> getAll() {
         List<Producto> data = this.productoRepository.findAll();
-        return this.productoMapper.productosToProductosDto(data);
+        return data.stream().map(e -> this.productoMapper.ProductoToDto(e)).collect(null);
+    }
+
+    @Override
+    public ProductoDto actualizar(Long id, ProductoDto data) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'actualizar'");
+    }
+
+    @Override
+    public ProductoDto buscarPorId(Long id) throws ProductoNotFoundException {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'buscarPorId'");
+    }
+
+    @Override
+    public void eliminarPorId(Long id) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'eliminarPorId'");
     }
 }
