@@ -26,5 +26,5 @@ public class ItemPedido {
     @JoinColumn(name = "producto_id")
     private Producto producto;
     private Integer cantidad;
-    private Integer precioUnitario;
+    private Float precioUnitario;
 }
