@@ -16,7 +16,7 @@ import com.unimagdalena.productStore.dto.detalleEnvio.DetalleEnvioToSaveDto;
 import com.unimagdalena.productStore.services.detalleEnvio.DetalleEnvioServices;
 
 @RestController
-@RequestMapping("/detalleEnvio")
+@RequestMapping("/detalleEnvios")
 public class DetalleEnvioController {
     @Autowired
     private DetalleEnvioServices entityService;
