@@ -7,12 +7,15 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.transaction.annotation.Transactional;
+
 import static org.assertj.core.api.Assertions.assertThat;
 
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
 
+@Transactional
 class ItemPedidoRepositoryTest extends AbstractIntegrationDBTest {
 
     private final ItemPedidoRepository itemPedidoRepository;

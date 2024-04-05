@@ -4,7 +4,7 @@ import com.unimagdalena.productStore.dto.itemPedido.ItemPedidoDto;
 import com.unimagdalena.productStore.dto.itemPedido.ItemPedidoToSaveDto;
 import com.unimagdalena.productStore.dto.itemPedido.ItemPedidoToUpdateDto;
 import com.unimagdalena.productStore.entity.ItemPedido;
-import com.unimagdalena.productStore.exceptions.ItemPedidoNotFoundException;
+import com.unimagdalena.productStore.exceptions.itemPedido.ItemPedidoNotFoundException;
 
 import java.util.List;
 

@@ -1,4 +1,4 @@
-package com.unimagdalena.productStore.exception.pago;
+package com.unimagdalena.productStore.exceptions.pago;
 
 public class TotalPagoNotValidException extends RuntimeException{
     public TotalPagoNotValidException() {

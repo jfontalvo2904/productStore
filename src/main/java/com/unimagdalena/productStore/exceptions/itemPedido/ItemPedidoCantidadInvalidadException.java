@@ -1,4 +1,4 @@
-package com.unimagdalena.productStore.exception.itemPedido;
+package com.unimagdalena.productStore.exceptions.itemPedido;
 
 public class ItemPedidoCantidadInvalidadException extends RuntimeException{
     public ItemPedidoCantidadInvalidadException() {

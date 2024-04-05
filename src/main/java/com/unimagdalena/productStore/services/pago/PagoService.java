@@ -6,7 +6,7 @@ import java.time.LocalDateTime;
 import com.unimagdalena.productStore.dto.pago.PagoDto;
 import com.unimagdalena.productStore.dto.pago.PagoToSaveDto;
 import com.unimagdalena.productStore.dto.pago.PagoToUpdateDto;
-import com.unimagdalena.productStore.exception.pago.PagoNotFoundException;
+import com.unimagdalena.productStore.exceptions.pago.PagoNotFoundException;
 import com.unimagdalena.productStore.enums.pago.MetodoDePago;
 
 public interface PagoService {

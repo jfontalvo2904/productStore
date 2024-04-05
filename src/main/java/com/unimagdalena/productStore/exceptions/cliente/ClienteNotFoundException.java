@@ -1,8 +1,8 @@
-package com.unimagdalena.productStore.exceptions;
+package com.unimagdalena.productStore.exceptions.cliente;
 
 public class ClienteNotFoundException extends RuntimeException {
     public ClienteNotFoundException() {
-        super();
+        super("El cliente no ha sido encontrado");
     }
 
     public ClienteNotFoundException(String message) {
@@ -17,8 +17,7 @@ public class ClienteNotFoundException extends RuntimeException {
         super(cause);
     }
 
-    protected ClienteNotFoundException(String message, Throwable cause, boolean enableSuppression,
-            boolean writableStackTrace) {
+    protected ClienteNotFoundException(String message, Throwable cause, boolean enableSuppression, boolean writableStackTrace) {
         super(message, cause, enableSuppression, writableStackTrace);
     }
 }

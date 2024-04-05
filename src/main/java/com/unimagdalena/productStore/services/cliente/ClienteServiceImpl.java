@@ -5,7 +5,7 @@ import com.unimagdalena.productStore.dto.cliente.ClienteMapperImpl;
 import com.unimagdalena.productStore.dto.cliente.ClienteToSaveDto;
 import com.unimagdalena.productStore.dto.cliente.ClienteToUpdateDto;
 import com.unimagdalena.productStore.entity.Cliente;
-import com.unimagdalena.productStore.exception.cliente.ClienteNotFoundException;
+import com.unimagdalena.productStore.exceptions.cliente.ClienteNotFoundException;
 import com.unimagdalena.productStore.repository.ClienteRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

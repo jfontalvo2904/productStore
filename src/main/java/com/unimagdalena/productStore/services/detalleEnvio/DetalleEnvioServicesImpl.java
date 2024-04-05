@@ -10,7 +10,7 @@ import com.unimagdalena.productStore.dto.detalleEnvio.DetalleEnvioMapperImpl;
 import com.unimagdalena.productStore.dto.detalleEnvio.DetalleEnvioToSaveDto;
 import com.unimagdalena.productStore.entity.DetalleEnvio;
 import com.unimagdalena.productStore.entity.Pedido;
-import com.unimagdalena.productStore.exceptions.DetalleEnvioNotFoundException;
+import com.unimagdalena.productStore.exceptions.detalleEnvio.DetalleEnvioNotFoundException;
 import com.unimagdalena.productStore.repository.DetalleEnvioRepository;
 import com.unimagdalena.productStore.repository.PedidoRepository;
 

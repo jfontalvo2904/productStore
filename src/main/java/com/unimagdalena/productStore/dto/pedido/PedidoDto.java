@@ -10,5 +10,7 @@ public record PedidoDto(Long id,
         Long cliente_id,
         LocalDateTime fechaPedido,
         PedidoStatus status,
+        Long detalle_envio_id,
+        Long pago_id,
         List<ItemPedidoDto> itemsPedido) {
 }

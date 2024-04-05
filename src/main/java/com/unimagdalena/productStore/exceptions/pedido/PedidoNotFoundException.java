@@ -1,4 +1,4 @@
-package com.unimagdalena.productStore.exceptions;
+package com.unimagdalena.productStore.exceptions.pedido;
 
 public class PedidoNotFoundException extends RuntimeException {
     public PedidoNotFoundException() {

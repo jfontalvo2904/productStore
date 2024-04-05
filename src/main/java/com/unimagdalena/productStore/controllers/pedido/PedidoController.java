@@ -13,11 +13,10 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.unimagdalena.productStore.dto.pedido.PedidoDto;
 import com.unimagdalena.productStore.dto.pedido.PedidoToSaveDto;
-import com.unimagdalena.productStore.entity.Pedido;
 import com.unimagdalena.productStore.services.pedido.PedidoServices;
 
 @RestController
-@RequestMapping("/pedidos")
+@RequestMapping("/api/v1/orders")
 
 public class PedidoController {
     @Autowired

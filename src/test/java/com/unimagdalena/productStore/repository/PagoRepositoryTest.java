@@ -11,16 +11,16 @@ import java.time.LocalDateTime;
 import java.time.Month;
 import java.util.List;
 import java.util.Optional;
-import java.util.OptionalInt;
+
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-
-import static org.junit.jupiter.api.Assertions.*;
+import org.springframework.transaction.annotation.Transactional;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
+@Transactional
 class PagoRepositoryTest extends AbstractIntegrationDBTest {
 
     private ClienteRepository clienteRepository;

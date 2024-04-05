@@ -4,7 +4,7 @@ import java.util.List;
 
 import com.unimagdalena.productStore.dto.producto.ProductoDto;
 import com.unimagdalena.productStore.dto.producto.ProductoToSaveDto;
-import com.unimagdalena.productStore.exceptions.ProductoNotFoundException;
+import com.unimagdalena.productStore.exceptions.producto.ProductoNotFoundException;
 
 public interface ProductoServices {
 

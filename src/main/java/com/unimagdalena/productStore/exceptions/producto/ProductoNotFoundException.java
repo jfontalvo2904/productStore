@@ -1,4 +1,4 @@
-package com.unimagdalena.productStore.exceptions;
+package com.unimagdalena.productStore.exceptions.producto;
 
 public class ProductoNotFoundException extends RuntimeException {
     public ProductoNotFoundException() {

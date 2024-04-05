@@ -4,7 +4,7 @@ import java.util.List;
 
 import com.unimagdalena.productStore.dto.detalleEnvio.DetalleEnvioDto;
 import com.unimagdalena.productStore.dto.detalleEnvio.DetalleEnvioToSaveDto;
-import com.unimagdalena.productStore.exceptions.DetalleEnvioNotFoundException;
+import com.unimagdalena.productStore.exceptions.detalleEnvio.DetalleEnvioNotFoundException;
 
 public interface DetalleEnvioServices {
 

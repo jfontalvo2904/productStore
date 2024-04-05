@@ -8,10 +8,8 @@ import org.springframework.stereotype.Service;
 import com.unimagdalena.productStore.dto.producto.ProductoDto;
 import com.unimagdalena.productStore.dto.producto.ProductoMapperImpl;
 import com.unimagdalena.productStore.dto.producto.ProductoToSaveDto;
-import com.unimagdalena.productStore.entity.Cliente;
 import com.unimagdalena.productStore.entity.Producto;
-import com.unimagdalena.productStore.exceptions.ProductoNotFoundException;
-import com.unimagdalena.productStore.repository.ClienteRepository;
+import com.unimagdalena.productStore.exceptions.producto.ProductoNotFoundException;
 import com.unimagdalena.productStore.repository.ProductoRepository;
 
 @Service

@@ -1,4 +1,4 @@
-package com.unimagdalena.productStore.exceptions;
+package com.unimagdalena.productStore.exceptions.detalleEnvio;
 
 public class DetalleEnvioNotFoundException extends RuntimeException {
     public DetalleEnvioNotFoundException() {

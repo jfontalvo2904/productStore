@@ -18,11 +18,11 @@ public class ItemPedido {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.PERSIST)
     @JoinColumn(name = "pedido_id")
     private Pedido pedido;
 
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.PERSIST)
     @JoinColumn(name = "producto_id")
     private Producto producto;
 

@@ -1,4 +1,4 @@
-package com.unimagdalena.productStore.exception;
+package com.unimagdalena.productStore.exceptions;
 
 public class IdNotNullException extends RuntimeException{
     public IdNotNullException() {

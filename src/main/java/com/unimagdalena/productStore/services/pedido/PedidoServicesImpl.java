@@ -2,6 +2,7 @@ package com.unimagdalena.productStore.services.pedido;
 
 import java.util.List;
 
+import com.unimagdalena.productStore.exceptions.cliente.ClienteNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -10,12 +11,9 @@ import com.unimagdalena.productStore.dto.pedido.PedidoMapperImpl;
 import com.unimagdalena.productStore.dto.pedido.PedidoToSaveDto;
 import com.unimagdalena.productStore.entity.Cliente;
 import com.unimagdalena.productStore.entity.Pedido;
-import com.unimagdalena.productStore.entity.Producto;
-import com.unimagdalena.productStore.exceptions.PedidoNotFoundException;
-import com.unimagdalena.productStore.exceptions.ProductoNotFoundException;
+import com.unimagdalena.productStore.exceptions.pedido.PedidoNotFoundException;
 import com.unimagdalena.productStore.repository.ClienteRepository;
 import com.unimagdalena.productStore.repository.PedidoRepository;
-import com.unimagdalena.productStore.repository.ProductoRepository;
 
 @Service
 public class PedidoServicesImpl implements PedidoServices {
@@ -33,15 +31,16 @@ public class PedidoServicesImpl implements PedidoServices {
     }
 
     @Override
-    public PedidoDto guardar(PedidoToSaveDto data) {
-        Cliente cliente = this.clienteRepository.findById(data.cliente_id()).orElse(null);
+    public PedidoDto guardar(PedidoToSaveDto data) throws PedidoNotFoundException {
+        Cliente cliente = this.clienteRepository
+                .findById(data.cliente_id())
+                .orElseThrow(ClienteNotFoundException::new);
+
         Pedido pedido = this.pedidoMapper.peditoToSaveToPedido(data);
-        if (cliente != null) {
-            pedido.setCliente(cliente);
-            Pedido pedidoSaved = this.pedidoRepository.save(pedido);
-            return this.pedidoMapper.pedidoToDTO(pedidoSaved);
-        }
-        return null;
+        pedido.setCliente(cliente);
+        Pedido pedidoSaved = this.pedidoRepository.save(pedido);
+        return this.pedidoMapper.pedidoToDTO(pedidoSaved);
+
     }
 
     @Override

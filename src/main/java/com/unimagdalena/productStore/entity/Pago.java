@@ -21,7 +21,7 @@ public class Pago {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    @OneToOne
+    @OneToOne(cascade = CascadeType.PERSIST)
     @JoinColumn(name = "pedido_id")
     private Pedido pedido;
 
