@@ -26,7 +26,7 @@ public class Pago {
     private Pedido pedido;
 
     @Column(nullable = false)
-    private double totalPago;
+    private Double totalPago;
 
     @Temporal(TemporalType.TIMESTAMP)
     private LocalDateTime fechaPago;
