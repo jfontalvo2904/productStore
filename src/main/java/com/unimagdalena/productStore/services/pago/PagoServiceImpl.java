@@ -92,16 +92,23 @@ public class PagoServiceImpl implements PagoService {
 
     @Override
     public void eliminarPago(Long id) throws PagoNotFoundException {
+        if(id == null) throw new IdNotNullException("El id del pago no puede ser null");
 
+        Pago pago = this.buscarPago(id);
+        this.pagoRepository.delete(pago);
     }
 
     @Override
     public List<PagoDto> recuperarPagosEnRangoDeFecha(LocalDateTime fechaInicio, LocalDateTime fechaFin) {
-        return null;
+        List<Pago> pagos = this.pagoRepository.recuperarPagosEnRangoDeFecha(fechaInicio, fechaFin);
+        return this.pagoMapper.pagosToDTO(pagos);
     }
 
     @Override
     public List<PagoDto> recuperarPagosPorPedidoYMetodoDePago(Long pedidoId, MetodoDePago metodoDePago) {
-        return null;
+        if(pedidoId == null) throw new IdNotNullException("El id del pago no puede ser null");
+
+        List<Pago> pagos = this.pagoRepository.recuperarPagosPorPedidoYMetodoDePago(pedidoId,metodoDePago);
+        return this.pagoMapper.pagosToDTO(pagos);
     }
 }
