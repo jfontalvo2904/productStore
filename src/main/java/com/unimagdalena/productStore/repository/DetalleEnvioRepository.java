@@ -8,5 +8,4 @@ import com.unimagdalena.productStore.entity.DetalleEnvio;
 import com.unimagdalena.productStore.entity.Pedido;
 
 public interface DetalleEnvioRepository extends JpaRepository<DetalleEnvio, Long> {
-    List<DetalleEnvio> findByPedido(Pedido pedido);
 }

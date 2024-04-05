@@ -11,8 +11,4 @@ import com.unimagdalena.productStore.enums.pedido.PedidoStatus;
 import java.time.LocalDateTime;
 
 public interface PedidoRepository extends JpaRepository<Pedido, Long> {
-
-    List<Pedido> findByFechaPedidoBetween(LocalDateTime fechaPedido);
-
-    List<Pedido> findByClienteAndPedidoStatus(Cliente cliente, PedidoStatus estado);
 }

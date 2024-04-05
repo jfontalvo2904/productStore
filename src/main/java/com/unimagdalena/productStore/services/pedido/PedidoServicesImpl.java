@@ -22,6 +22,8 @@ public class PedidoServicesImpl implements PedidoServices {
     @Autowired
     private PedidoRepository pedidoRepository;
     @Autowired
+    private ClienteRepository clienteRepository;
+    @Autowired
     private PedidoMapperImpl pedidoMapper;
 
     @Override
@@ -32,9 +34,14 @@ public class PedidoServicesImpl implements PedidoServices {
 
     @Override
     public PedidoDto guardar(PedidoToSaveDto data) {
+        Cliente cliente = this.clienteRepository.findById(data.cliente_id()).orElse(null);
         Pedido pedido = this.pedidoMapper.peditoToSaveToPedido(data);
-        Pedido pedidoSaved = this.pedidoRepository.save(pedido);
-        return this.pedidoMapper.pedidoToDTO(pedidoSaved);
+        if (cliente != null) {
+            pedido.setCliente(cliente);
+            Pedido pedidoSaved = this.pedidoRepository.save(pedido);
+            return this.pedidoMapper.pedidoToDTO(pedidoSaved);
+        }
+        return null;
     }
 
     @Override

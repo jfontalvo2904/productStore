@@ -9,13 +9,17 @@ import com.unimagdalena.productStore.dto.detalleEnvio.DetalleEnvioDto;
 import com.unimagdalena.productStore.dto.detalleEnvio.DetalleEnvioMapperImpl;
 import com.unimagdalena.productStore.dto.detalleEnvio.DetalleEnvioToSaveDto;
 import com.unimagdalena.productStore.entity.DetalleEnvio;
+import com.unimagdalena.productStore.entity.Pedido;
 import com.unimagdalena.productStore.exceptions.DetalleEnvioNotFoundException;
 import com.unimagdalena.productStore.repository.DetalleEnvioRepository;
+import com.unimagdalena.productStore.repository.PedidoRepository;
 
 @Service
 public class DetalleEnvioServicesImpl implements DetalleEnvioServices {
     @Autowired
     private DetalleEnvioRepository detalleEnvioRepository;
+    @Autowired
+    private PedidoRepository pedidoRepository;
     @Autowired
     private DetalleEnvioMapperImpl detalleEnvioMapper;
 
@@ -27,9 +31,14 @@ public class DetalleEnvioServicesImpl implements DetalleEnvioServices {
 
     @Override
     public DetalleEnvioDto guardar(DetalleEnvioToSaveDto data) {
+        Pedido pedido = this.pedidoRepository.findById(data.pedido_id()).orElse(null);
         DetalleEnvio detalleEnvio = this.detalleEnvioMapper.detalleEnvioToSaveToDetalleEnvio(data);
-        DetalleEnvio detalleEnvioSaved = this.detalleEnvioRepository.save(detalleEnvio);
-        return this.detalleEnvioMapper.detalleEnvioToDto(detalleEnvioSaved);
+        if (pedido != null) {
+            detalleEnvio.setPedido(pedido);
+            DetalleEnvio detalleEnvioSaved = this.detalleEnvioRepository.save(detalleEnvio);
+            return this.detalleEnvioMapper.detalleEnvioToDto(detalleEnvioSaved);
+        }
+        return null;
     }
 
     @Override
