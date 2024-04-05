@@ -11,10 +11,12 @@ import com.unimagdalena.productStore.exception.pago.TotalPagoNotValidException;
 import com.unimagdalena.productStore.exceptions.PedidoNotFoundException;
 import com.unimagdalena.productStore.repository.PagoRepository;
 import com.unimagdalena.productStore.repository.PedidoRepository;
+import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
 import java.util.List;
 
+@Service
 public class PagoServiceImpl implements PagoService {
 
     private final PagoRepository pagoRepository;
