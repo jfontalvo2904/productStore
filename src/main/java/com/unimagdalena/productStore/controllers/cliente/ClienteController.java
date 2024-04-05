@@ -3,7 +3,6 @@ package com.unimagdalena.productStore.controllers.cliente;
 import com.unimagdalena.productStore.dto.cliente.ClienteDto;
 import com.unimagdalena.productStore.dto.cliente.ClienteToSaveDto;
 import com.unimagdalena.productStore.dto.cliente.ClienteToUpdateDto;
-import com.unimagdalena.productStore.entity.Cliente;
 import com.unimagdalena.productStore.services.cliente.ClienteServiceImpl;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
