@@ -2,7 +2,7 @@ package com.unimagdalena.productStore.exceptions;
 
 public class ItemPedidoNotFoundException extends RuntimeException {
     public ItemPedidoNotFoundException() {
-        super();
+        super( "El item de pedido no ha sido encontrado");
     }
 
     public ItemPedidoNotFoundException(String message) {
