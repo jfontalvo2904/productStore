@@ -4,10 +4,11 @@ import com.unimagdalena.productStore.entity.DetalleEnvio;
 import org.mapstruct.IterableMapping;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
+import org.mapstruct.MappingConstants;
 
 import java.util.List;
 
-@Mapper
+@Mapper(componentModel = MappingConstants.ComponentModel.SPRING)
 public interface DetalleEnvioMapper {
 
     @Mapping(target = "pedido", expression = "java(null)")
