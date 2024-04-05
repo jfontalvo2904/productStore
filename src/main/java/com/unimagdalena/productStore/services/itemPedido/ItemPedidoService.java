@@ -1,14 +1,9 @@
 package com.unimagdalena.productStore.services.itemPedido;
 
-import com.unimagdalena.productStore.dto.cliente.ClienteDto;
-import com.unimagdalena.productStore.dto.cliente.ClienteToSaveDto;
-import com.unimagdalena.productStore.dto.cliente.ClienteToUpdateDto;
 import com.unimagdalena.productStore.dto.itemPedido.ItemPedidoDto;
 import com.unimagdalena.productStore.dto.itemPedido.ItemPedidoToSaveDto;
 import com.unimagdalena.productStore.dto.itemPedido.ItemPedidoToUpdateDto;
-import com.unimagdalena.productStore.entity.Cliente;
 import com.unimagdalena.productStore.entity.ItemPedido;
-import com.unimagdalena.productStore.exception.cliente.ClienteNotFoundException;
 import com.unimagdalena.productStore.exceptions.ItemPedidoNotFoundException;
 
 import java.util.List;

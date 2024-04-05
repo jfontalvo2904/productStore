@@ -6,7 +6,7 @@ import java.time.LocalDateTime;
 
 public record PagoDto(Long id,
                       Long pedido_id,
-                      double totalPago,
+                      Double totalPago,
                       LocalDateTime fechaPago,
                       MetodoDePago metodoDePago) {
 }
