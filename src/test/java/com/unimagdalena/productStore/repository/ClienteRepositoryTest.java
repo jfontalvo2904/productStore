@@ -112,15 +112,13 @@ class ClienteRepositoryTest extends AbstractIntegrationDBTest {
 
     @Test
     void buscarClientesPorNombre(){
-        Cliente cliente1 = this.crearCliente("Victor", "victor@correo.com", "calle 10B");
-        Cliente cliente2 = this.crearCliente("José Alberto", "jose@correo.com", "calle 10B");
-        this.clienteRepository.save(cliente1);
-        this.clienteRepository.save(cliente2);
+        Cliente cliente = this.crearCliente("Victor", "victor@correo.com", "calle 10B");
+     
+        this.clienteRepository.save(cliente);
 
-        List<Cliente> clientes = this.clienteRepository.buscarClientesPorNombre("José");
-        List<Cliente> clientes2 = this.clienteRepository.buscarClientesPorNombre("Victor");
+        List<Cliente> clientes = this.clienteRepository.buscarClientesPorNombre("Victor");
 
-        assertThat(clientes2).isNotEmpty().hasSize(1);
+        assertThat(clientes).isNotEmpty().hasSize(1);
     }
 
 

@@ -5,7 +5,6 @@ import com.unimagdalena.productStore.dto.pago.PagoToSaveDto;
 import com.unimagdalena.productStore.dto.pago.PagoToUpdateDto;
 import com.unimagdalena.productStore.enums.pago.MetodoDePago;
 import com.unimagdalena.productStore.services.pago.PagoServiceImpl;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -21,7 +20,6 @@ public class PagoController {
 
     private final PagoServiceImpl pagoService;
 
-    @Autowired
     public PagoController(PagoServiceImpl pagoService) {
         this.pagoService = pagoService;
     }

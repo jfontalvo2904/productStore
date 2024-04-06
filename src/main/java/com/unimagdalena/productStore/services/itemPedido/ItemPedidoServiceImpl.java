@@ -15,7 +15,6 @@ import com.unimagdalena.productStore.exceptions.producto.ProductoNotFoundExcepti
 import com.unimagdalena.productStore.repository.ItemPedidoRepository;
 import com.unimagdalena.productStore.repository.PedidoRepository;
 import com.unimagdalena.productStore.repository.ProductoRepository;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -28,7 +27,6 @@ public class ItemPedidoServiceImpl implements ItemPedidoService {
     private final ProductoRepository productoRepository;
     private final ItemPedidoMapperImpl itemPedidoMapper;
 
-    @Autowired
     public ItemPedidoServiceImpl(ItemPedidoRepository itemPedidoRepository,
                                  PedidoRepository pedidoRepository,
                                  ProductoRepository productoRepository,

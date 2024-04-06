@@ -4,7 +4,6 @@ import com.unimagdalena.productStore.dto.itemPedido.ItemPedidoDto;
 import com.unimagdalena.productStore.dto.itemPedido.ItemPedidoToSaveDto;
 import com.unimagdalena.productStore.dto.itemPedido.ItemPedidoToUpdateDto;
 import com.unimagdalena.productStore.services.itemPedido.ItemPedidoServiceImpl;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -24,7 +23,6 @@ public class ItemPedidoController {
 
     private final ItemPedidoServiceImpl itemPedidoService;
 
-    @Autowired
     public ItemPedidoController(ItemPedidoServiceImpl itemPedidoService) {
         this.itemPedidoService = itemPedidoService;
     }

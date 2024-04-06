@@ -3,7 +3,6 @@ package com.unimagdalena.productStore.repository;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 
-import com.unimagdalena.productStore.entity.Cliente;
 import com.unimagdalena.productStore.entity.Producto;
 import java.util.List;
 
