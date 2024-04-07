@@ -4,6 +4,8 @@ import com.unimagdalena.productStore.dto.cliente.ClienteDto;
 import com.unimagdalena.productStore.dto.cliente.ClienteToSaveDto;
 import com.unimagdalena.productStore.dto.cliente.ClienteToUpdateDto;
 import com.unimagdalena.productStore.services.cliente.ClienteServiceImpl;
+
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -51,18 +53,18 @@ public class ClienteController {
     @PostMapping("")
     ResponseEntity<ClienteDto> guardarCliente(@RequestBody ClienteToSaveDto clienteToSaveDto){
         ClienteDto clienteSaved = this.clienteService.crearCliente(clienteToSaveDto);
-        return ResponseEntity.ok().body(clienteSaved);
+        return ResponseEntity.status(HttpStatus.CREATED).body(clienteSaved);
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<ClienteDto> actualizarUsuario(@PathVariable("id") Long id, @RequestBody ClienteToUpdateDto clienteToUpdateDto) {
+    public ResponseEntity<ClienteDto> actualizarCliente(@PathVariable("id") Long id, @RequestBody ClienteToUpdateDto clienteToUpdateDto) {
         return ResponseEntity.ok().body(this.clienteService.actualizarCliente(id,clienteToUpdateDto));
     }
 
     @DeleteMapping("/{id}")
     public ResponseEntity<String> eliminarCliente( @PathVariable("id") Long id) {
         this.clienteService.eliminarCliente(id);
-        return ResponseEntity.ok().body("Cliente eliminado correctamente");
+        return ResponseEntity.status(HttpStatus.NO_CONTENT).body("Cliente eliminado correctamente");
     }
 
     
