@@ -73,8 +73,16 @@ public class DataGenerate {
         return new Pago(1L,this.pedido,2000D,this.actualDate(), MetodoDePago.DAVIPLATA);
     }
 
+    public Pago pagoNotData() {
+        return new Pago(1L,null,2000D,this.actualDate(), MetodoDePago.DAVIPLATA);
+    }
+
     public Pedido pedido() {
         return new Pedido(1L,this.cliente,this.actualDate(), PedidoStatus.PENDIENTE,this.detalleEnvio,null,null);
+    }
+
+    public Pedido pedidoNotData() {
+        return new Pedido(1L,null,this.actualDate(), PedidoStatus.PENDIENTE,this.detalleEnvio,null,null);
     }
 
     public DetalleEnvio detalleEnvio() {
@@ -87,6 +95,10 @@ public class DataGenerate {
 
     public ItemPedido itemPedido() {
         return new ItemPedido(1L,this.pedido,this.producto,10,this.producto.getPrice());
+    }
+
+    public ItemPedido itemPedidoNotData() {
+        return new ItemPedido(1L,null,null,10,1000F);
     }
 
     public List<Pedido> pedidos() {

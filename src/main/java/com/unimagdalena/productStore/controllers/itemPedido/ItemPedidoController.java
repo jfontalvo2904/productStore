@@ -4,6 +4,8 @@ import com.unimagdalena.productStore.dto.itemPedido.ItemPedidoDto;
 import com.unimagdalena.productStore.dto.itemPedido.ItemPedidoToSaveDto;
 import com.unimagdalena.productStore.dto.itemPedido.ItemPedidoToUpdateDto;
 import com.unimagdalena.productStore.services.itemPedido.ItemPedidoServiceImpl;
+
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -60,7 +62,7 @@ public class ItemPedidoController {
 
     @PostMapping("")
     public ResponseEntity<ItemPedidoDto> crearItemPedido(@RequestBody ItemPedidoToSaveDto itemPedidoToSaveDto) {     
-        return ResponseEntity.ok().body(this.itemPedidoService.crearItemPedido(itemPedidoToSaveDto));    
+        return ResponseEntity.status(HttpStatus.CREATED).body(this.itemPedidoService.crearItemPedido(itemPedidoToSaveDto));    
     }
 
     @PutMapping("/{pedidoId}")
