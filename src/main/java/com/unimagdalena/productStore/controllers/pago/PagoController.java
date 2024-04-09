@@ -5,6 +5,7 @@ import com.unimagdalena.productStore.dto.pago.PagoToSaveDto;
 import com.unimagdalena.productStore.dto.pago.PagoToUpdateDto;
 import com.unimagdalena.productStore.enums.pago.MetodoDePago;
 import com.unimagdalena.productStore.services.pago.PagoServiceImpl;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -31,7 +32,7 @@ public class PagoController {
 
     @PostMapping("")
     ResponseEntity<PagoDto> crearPago(@RequestBody PagoToSaveDto pagoToSaveDto) {
-        return ResponseEntity.ok().body(this.pagoService.crearPago(pagoToSaveDto));
+        return ResponseEntity.status(HttpStatus.CREATED).body(this.pagoService.crearPago(pagoToSaveDto));
     }
 
     @PutMapping("/{pagoId}")
